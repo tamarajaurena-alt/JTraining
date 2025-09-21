@@ -1,0 +1,10 @@
+body{background-color:rgb(120, 83, 3);}
+
+.Botones{display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+  padding: 10px 20px;
+  background-color: #5a3003;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  border-radius: 15px;}
