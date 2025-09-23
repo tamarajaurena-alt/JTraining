@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Formulario</title>
+    <link rel="stylesheet" href="../Styles.css">
+</head>
+<body>
+     <header>
+       <header class="header">
+  <div class="header-izq">
+         <h1>CHEQUEOS</h1>
+    </div>
+    <nav class="navbar">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li> 
+         <li><a href="pagina1.html">Formulario</a></li>
+         <li><a href="pagina2.html">Planificaciones</a></li>
+         <li><a href="#pagina3.html">Recetario</a></li>
+         <li><a href="pagina4.html">Chequeos</a></li>
+      </ul>
+    </nav>
+    </header>
+
+    <div class="formulario-container">
+  <h2>Formulario de Rutina</h2>
+  <form action="#" method="post" enctype="multipart/form-data">
+    
+    <!-- RM por ejercicio -->
+    <label for="rm">RM de cada ejercicio:</label><br>
+    <input type="text" id="rm" name="rm" placeholder="Ej: Sentadilla 100kg"><br><br>
+    
+    <!-- Dificultad -->
+    <label for="dificultad">Dificultad:</label><br>
+    <select id="dificultad" name="dificultad" required>
+      <option value="">-- Seleccione --</option>
+      <option value="alta">Alta</option>
+      <option value="media">Media</option>
+      <option value="baja">Baja</option>
+    </select><br><br>
+    
+    <!-- Foto -->
+    <label for="foto">Inserte foto actual:</label><br>
+    <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
+    
+    <button type="submit">Enviar</button>
+  </form>
+</div>
+
+
+<Footer>  <p>© 2025 JTraining - Todos los derechos reservados</p>
+
+    <div class="social-btns">
+      <a href="https://www.instagram.com/tu_usuario" target="_blank" class="instagram">
+        <i class="fab fa-instagram"></i>
+      </a>
+      <a href="https://wa.me/5491112345678" target="_blank" class="whatsapp">
+        <i class="fab fa-whatsapp"></i>
+      </a>
+    </div>
+</Footer>
+
+
+
+    
