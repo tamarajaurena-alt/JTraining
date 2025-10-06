@@ -1,0 +1,14 @@
+// Mixin para flex
+@mixin flex($direction: row, $justify: center, $align: center, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  gap: $gap;
+}
+
+// Mixin para medidas generales
+@mixin medidas($padding: 0, $radius: 0) {
+  padding: $padding;
+  border-radius: $radius;
+}

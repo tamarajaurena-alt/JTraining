@@ -1,0 +1,59 @@
+.header {
+  @include flex(row, space-between, center);
+  @include medidas(20px 30px, $radius-general);
+  background-color: $color-header;
+  box-shadow: $sombra;
+
+  .header-left {
+    @include flex(column, flex-start, flex-start, 2px);
+
+    h1 {
+      color: $color-texto;
+      gap: 2px;
+    }
+  }
+
+  .navbar {
+    ul {
+      @include flex(row, center, center, 50px);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        a {
+          color: white;
+          text-decoration: none;
+          font-weight: bold;
+
+          &:hover,
+          &.active {
+            color: $color-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+// 🔹 Responsivo
+@media (max-width: 500px) {
+  .header {
+    @include flex(column, flex-start, flex-start, 10px);
+    @include medidas(15px 20px, $radius-general);
+
+    .navbar ul {
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+
+      li a {
+        font-size: 14px;
+      }
+    }
+
+    h1 {
+      font-size: 20px;
+    }
+  }
+}
