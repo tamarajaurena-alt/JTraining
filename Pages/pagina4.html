@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Formulario</title>
     <link rel="stylesheet" href="../css/Styles.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
      <header>
@@ -21,31 +22,38 @@
       </ul>
     </nav>
     </header>
+    
+    /*FORMULARIO HECHO CON BOOTSTRAP*/
+<main>
+  <section class="formulario-section">
+    <h2>Seguimientos / Progresos</h2>
 
-    <div class="formulario-container">
-  <h2>Formulario de Rutina</h2>
-  <form action="#" method="post" enctype="multipart/form-data">
-    
-    <!-- RM por ejercicio -->
-    <label for="rm">RM de cada ejercicio:</label><br>
-    <input type="text" id="rm" name="rm" placeholder="Ej: Sentadilla 100kg"><br><br>
-    
-    <!-- Dificultad -->
-    <label for="dificultad">Dificultad:</label><br>
-    <select id="dificultad" name="dificultad" required>
-      <option value="">-- Seleccione --</option>
-      <option value="alta">Alta</option>
-      <option value="media">Media</option>
-      <option value="baja">Baja</option>
-    </select><br><br>
-    
-    <!-- Foto -->
-    <label for="foto">Inserte foto actual:</label><br>
-    <input type="file" id="foto" name="foto" accept="image/*" required><br><br>
-    
-    <button type="submit">Enviar</button>
-  </form>
-</div>
+    <form>
+      <div class="mb-3">
+        <label for="rm" class="form-label">RM de cada ejercicio:</label>
+        <input type="text" class="form-control" id="rm" placeholder="Ej: Sentadilla 100kg">
+      </div>
+
+      <div class="mb-3">
+        <label for="dificultad" class="form-label">Dificultad:</label>
+        <select class="form-select" id="dificultad">
+          <option selected disabled>-- Seleccione --</option>
+          <option>Alta</option>
+          <option>Media</option>
+          <option>Baja</option>
+        </select>
+      </div>
+
+      <div class="mb-3">
+        <label for="foto" class="form-label">Inserte foto actual:</label>
+        <input class="form-control" type="file" id="foto">
+      </div>
+
+      <button type="submit" class="btn-enviar">Enviar</button>
+    </form>
+  </section>
+</main>
+
 
 
 <Footer>  <p>© 2025 JTraining - Todos los derechos reservados</p>

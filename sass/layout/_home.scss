@@ -1,59 +1,347 @@
+@use '../utilidades/variables' as *;
+@use '../utilidades/mixin' as *;
+
+/* ESTILO GENERAL */
+body {
+  background-color: $color-fondo;
+  font-family: $fuente;
+  color: $color-texto;
+  line-height: 1.6;
+}
+
+/*  HEADER */
 .header {
-  @include flex(row, space-between, center);
-  @include medidas(20px 30px, $radius-general);
-  background-color: $color-header;
-  box-shadow: $sombra;
+  @include flex-center(space-between, center);
+  padding: 20px 40px;
+  background-color: $color-principal;
+  border-radius: $radio;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  flex-wrap: wrap;
+}
 
-  .header-left {
-    @include flex(column, flex-start, flex-start, 2px);
+.header-izq {
+  @include flex-center(center, center, 15px);
+  
+  img {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+  }
 
-    h1 {
-      color: $color-texto;
-      gap: 2px;
+  h1 {
+    color: $color-blanco;
+    font-size: 28px;
+    letter-spacing: 1px;
+  }
+}
+
+/*  NAVBAR */
+.navbar ul {
+  @include flex-center(center, center, 40px);
+  list-style: none;
+  
+  li a {
+    color: $color-blanco;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 17px;
+    transition: color 0.3s ease;
+
+    &:hover,
+    &.active {
+      color: $color-secundario;
+    }
+  }
+}
+
+/*  CONTENIDO PRINCIPAL */
+main {
+  max-width: 1100px;
+  margin: 50px auto;
+  padding: 0 20px;
+
+  h2 {
+    font-size: 26px;
+    color: $color-principal;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  p {
+    font-size: 18px;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+
+  ul {
+    list-style: disc inside;
+    margin: 10px 0 20px 20px;
+    font-size: 17px;
+  }
+
+  video {
+    display: block;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 10px;
+    box-shadow: $sombra;
+  }
+}
+
+/*  RUTINAS Y VIDEO */
+.contenedor-rutinas-video {
+  @include flex-center(space-between, flex-start, 30px);
+  flex-wrap: wrap;
+  margin: 40px;
+
+  .rutinas {
+    @include box(white);
+    flex: 1;
+    min-width: 350px;
+    max-width: 600px;
+
+    h2, h3 {
+      color: $color-principal;
+      text-align: center;
+      margin-bottom: 15px;
     }
   }
 
-  .navbar {
+  .video-box {
+  flex: 1;
+  min-width: 350px;
+  max-width: 500px; 
+  @include flex-center(center, center);
+
+  video {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    border-radius: $radio;
+    box-shadow: $sombra;
+    object-fit: cover;
+  }
+}
+
+}
+
+/*  RECETARIO */
+.contenedor-receta-foto {
+  @include flex-center(space-between, flex-start, 30px);
+  flex-wrap: wrap;
+  margin: 40px;
+
+  .recetas {
+    @include box(white);
+    flex: 1;
+    min-width: 350px;
+    max-width: 600px;
+
+    h2, h3 {
+      color: $color-principal;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      color: #333;
+      text-align: justify;
+    }
+  }
+
+  .foto-receta {
+    @include flex-center(center, center);
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+
+    img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: $radio;
+      box-shadow: $sombra;
+      object-fit: cover;
+    }
+  }
+}
+
+/*  FORMULARIO */
+.formulario-section {
+  @include box(white);
+  max-width: 600px;
+  margin: 60px auto;
+
+  h2 {
+    color: $color-principal;
+    text-align: center;
+    margin-bottom: 25px;
+  }
+
+  label {
+    font-weight: 600;
+    color: $color-texto;
+    margin-bottom: 8px;
+    display: block;
+  }
+
+  .form-control,
+  .form-select {
+    border: 2px solid #d9d4ce;
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: $color-principal;
+      box-shadow: 0 0 6px rgba(121, 72, 8, 0.4);
+      outline: none;
+    }
+  }
+
+  .btn-enviar {
+    background-color: $color-principal;
+    color: $color-blanco;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 18px;
+    font-size: 17px;
+    font-weight: 600;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+    &:hover {
+      background-color: #a86b2b;
+      transform: scale(1.03);
+    }
+  }
+}
+
+/*  FOOTER */
+footer {
+  background-color: $color-principal;
+  color: $color-blanco;
+  text-align: center;
+  padding: 25px;
+  border-radius: 15px 15px 0 0;
+  margin-top: 50px;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+
+  p {
+    font-size: 14px;
+    margin-bottom: 15px;
+  }
+}
+
+.social-btns {
+  @include flex-center(center, center, 20px);
+
+  a {
+    color: $color-blanco;
+    font-size: 22px;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      color: $color-secundario;
+      transform: scale(1.2);
+    }
+  }
+}
+
+/*  SECCIÓN INICIO */
+.inicio {
+  padding: 40px;
+
+  .inicio-contenido {
+    @include flex-center(space-between, flex-start, 30px);
+    flex-wrap: wrap;
+  }
+
+  .texto-box {
+    @include box(white);
+    flex: 1;
+    min-width: 350px;
+    max-width: 600px;
+    margin-top: 40px;
+
+    h2 {
+      color: $color-principal;
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 25px;
+      color: #333;
+      margin-bottom: 15px;
+    }
+
     ul {
-      @include flex(row, center, center, 50px);
-      list-style: none;
-      padding: 0;
-      margin: 0;
+      list-style: disc;
+      padding-left: 25px;
+      color: #333;
+      font-size: 16px;
 
       li {
-        a {
-          color: white;
-          text-decoration: none;
-          font-weight: bold;
-
-          &:hover,
-          &.active {
-            color: $color-hover;
-          }
-        }
+        margin-bottom: 8px;
       }
     }
   }
+.video-box {
+  flex: 1;
+  min-width: 350px;
+  max-width: 500px; 
+  @include flex-center(center, center);
+
+  video {
+    width: 100%;
+    aspect-ratio: 1 / 1; 
+    border-radius: $radio;
+    box-shadow: $sombra;
+    object-fit: cover;
+  }
 }
 
-// 🔹 Responsivo
-@media (max-width: 500px) {
+}
+
+
+/*  RESPONSIVE */
+@media (max-width: 576px) {
   .header {
-    @include flex(column, flex-start, flex-start, 10px);
-    @include medidas(15px 20px, $radius-general);
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .navbar ul {
-      flex-direction: column;
-      gap: 15px;
-      width: 100%;
+  .navbar ul {
+    flex-direction: column;
+  }
 
-      li a {
-        font-size: 14px;
-      }
-    }
+  .contenedor-receta-foto,
+  .contenedor-rutinas-video {
+    flex-direction: column;
+    align-items: center;
+  }
 
-    h1 {
-      font-size: 20px;
-    }
+  .recetas,
+  .rutinas,
+  .formulario-section {
+    width: 95%;
   }
 }
+
+@media (min-width: 577px) and (max-width: 991px) {
+  .header {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 992px) {
+  .contenedor-receta-foto,
+  .contenedor-rutinas-video {
+    flex-direction: row;
+  }
+}
+
