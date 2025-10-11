@@ -3,7 +3,9 @@
 
 /* ESTILO GENERAL */
 body {
-  background-color: $color-fondo;
+  background: $gradient-fondo;
+  background-attachment: fixed;
+  background-size: cover;
   font-family: $fuente;
   color: $color-texto;
   line-height: 1.6;
@@ -81,11 +83,14 @@ main {
 
   video {
     display: block;
-    margin: 20px auto;
-    width: 80%;
-    border-radius: 10px;
-    box-shadow: $sombra;
-  }
+  margin: 0 auto;          
+  width: 100%;          
+  max-width: 500px;       
+  height: auto;
+  border-radius: 15px;
+  box-shadow: $sombra;
+  object-fit: cover;       
+}
 }
 
 /*  RUTINAS Y VIDEO */
@@ -95,13 +100,14 @@ main {
   margin: 40px;
 
   .rutinas {
-    @include box(white);
+   background-color: rgb(171, 127, 83);  
     flex: 1;
     min-width: 350px;
     max-width: 600px;
+    border-radius: 8px;
 
     h2, h3 {
-      color: $color-principal;
+      color:black;
       text-align: center;
       margin-bottom: 15px;
     }
@@ -122,98 +128,126 @@ main {
   }
 }
 
-}
+}/* ================================
+   RECETARIO ORIGINAL
+================================= */
 
-/*  RECETARIO */
 .contenedor-receta-foto {
-  @include flex-center(space-between, flex-start, 30px);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
   flex-wrap: wrap;
+  gap: 30px;
   margin: 40px;
+}
 
-  .recetas {
-    @include box(white);
-    flex: 1;
-    min-width: 350px;
-    max-width: 600px;
+/* Caja de la receta */
+.contenedor-receta-foto .recetas {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  padding: 25px;
+  flex: 1;
+  min-width: 350px;
+  max-width: 600px;
+}
 
-    h2, h3 {
-      color: $color-principal;
-      text-align: center;
-      margin-bottom: 15px;
-    }
+/* Títulos */
+.contenedor-receta-foto .recetas h2 {
+  color: #794808;
+  text-align: center;
+  margin-bottom: 15px;
+}
 
-    p {
-      font-size: 18px;
-      line-height: 1.7;
-      color: #333;
-      text-align: justify;
-    }
+.contenedor-receta-foto .recetas h3,
+.contenedor-receta-foto .recetas h4 {
+  color: #794808;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Listas */
+.contenedor-receta-foto .recetas ul {
+  list-style: disc;
+  margin-left: 20px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Caja de imagen */
+.foto-receta {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.foto-receta img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  object-fit: cover;
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .contenedor-receta-foto {
+    flex-direction: column;
+    align-items: center;
   }
 
-  .foto-receta {
-    @include flex-center(center, center);
-    flex: 1;
-    min-width: 300px;
-    max-width: 500px;
-
-    img {
-      width: 100%;
-      max-width: 400px;
-      border-radius: $radio;
-      box-shadow: $sombra;
-      object-fit: cover;
-    }
+  .foto-receta img {
+    max-width: 300px;
+    margin-top: 20px;
   }
 }
 
-/*  FORMULARIO */
-.formulario-section {
-  @include box(white);
-  max-width: 600px;
-  margin: 60px auto;
+
+/* FORMULARIO CON BOOTSTRAP PERSONALIZADO */
+.formulario-general {
+  background-color: $color-fondo;
+  border-radius: $radio;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
 
   h2 {
-    color: $color-principal;
+    color:black;
     text-align: center;
-    margin-bottom: 25px;
+    font-weight: 600;
+    margin-bottom: 20px;
   }
 
   label {
-    font-weight: 600;
+    font-weight: bold;
     color: $color-texto;
-    margin-bottom: 8px;
-    display: block;
   }
 
-  .form-control,
-  .form-select {
-    border: 2px solid #d9d4ce;
+  input, select, textarea {
+    border: 1px solid $color-principal;
     border-radius: 10px;
-    padding: 10px 12px;
-    font-size: 16px;
-    transition: all 0.3s ease;
-
-    &:focus {
-      border-color: $color-principal;
-      box-shadow: 0 0 6px rgba(121, 72, 8, 0.4);
-      outline: none;
-    }
+    padding: 10px;
+    font-family: $fuente;
   }
 
-  .btn-enviar {
+  button {
     background-color: $color-principal;
-    color: $color-blanco;
+    color: #fff;
     border: none;
     border-radius: 10px;
-    padding: 10px 18px;
-    font-size: 17px;
-    font-weight: 600;
-    margin-top: 15px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s ease;
 
     &:hover {
-      background-color: #a86b2b;
-      transform: scale(1.03);
+      background-color: darken($color-principal, 10%);
     }
   }
 }

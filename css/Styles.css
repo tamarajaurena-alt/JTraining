@@ -10,7 +10,9 @@
 /*  MIXINS  */
 /* ESTILO GENERAL */
 body {
-  background-color: rgb(219, 217, 212);
+  background: radial-gradient(circle farthest-corner at 10% 20%, rgb(58, 35, 12) 0%, rgb(215, 119, 13) 90%);
+  background-attachment: fixed;
+  background-size: cover;
   font-family: "Poppins", Arial, sans-serif;
   color: #2b2b2b;
   line-height: 1.6;
@@ -89,10 +91,13 @@ main ul {
 }
 main video {
   display: block;
-  margin: 20px auto;
-  width: 80%;
-  border-radius: 10px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  object-fit: cover;
 }
 
 /*  RUTINAS Y VIDEO */
@@ -105,16 +110,14 @@ main video {
   margin: 40px;
 }
 .contenedor-rutinas-video .rutinas {
-  background-color: white;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 25px;
+  background-color: rgb(171, 127, 83);
   flex: 1;
   min-width: 350px;
   max-width: 600px;
+  border-radius: 8px;
 }
 .contenedor-rutinas-video .rutinas h2, .contenedor-rutinas-video .rutinas h3 {
-  color: #794808;
+  color: black;
   text-align: center;
   margin-bottom: 15px;
 }
@@ -135,15 +138,19 @@ main video {
   object-fit: cover;
 }
 
-/*  RECETARIO */
+/* ================================
+   RECETARIO ORIGINAL
+================================= */
 .contenedor-receta-foto {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 30px;
   flex-wrap: wrap;
+  gap: 30px;
   margin: 40px;
 }
+
+/* Caja de la receta */
 .contenedor-receta-foto .recetas {
   background-color: white;
   border-radius: 15px;
@@ -153,82 +160,97 @@ main video {
   min-width: 350px;
   max-width: 600px;
 }
-.contenedor-receta-foto .recetas h2, .contenedor-receta-foto .recetas h3 {
+
+/* Títulos */
+.contenedor-receta-foto .recetas h2 {
   color: #794808;
   text-align: center;
   margin-bottom: 15px;
 }
-.contenedor-receta-foto .recetas p {
-  font-size: 18px;
-  line-height: 1.7;
-  color: #333;
-  text-align: justify;
+
+.contenedor-receta-foto .recetas h3,
+.contenedor-receta-foto .recetas h4 {
+  color: #794808;
+  text-align: center;
+  margin-bottom: 10px;
 }
-.contenedor-receta-foto .foto-receta {
+
+/* Listas */
+.contenedor-receta-foto .recetas ul {
+  list-style: disc;
+  margin-left: 20px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #333;
+}
+
+/* Caja de imagen */
+.foto-receta {
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 0;
-  flex: 1;
-  min-width: 300px;
-  max-width: 500px;
 }
-.contenedor-receta-foto .foto-receta img {
+
+.foto-receta img {
   width: 100%;
   max-width: 400px;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
   object-fit: cover;
 }
 
-/*  FORMULARIO */
-.formulario-section {
-  background-color: white;
+/* Responsivo */
+@media (max-width: 900px) {
+  .contenedor-receta-foto {
+    flex-direction: column;
+    align-items: center;
+  }
+  .foto-receta img {
+    max-width: 300px;
+    margin-top: 20px;
+  }
+}
+/* FORMULARIO CON BOOTSTRAP PERSONALIZADO */
+.formulario-general {
+  background-color: rgb(219, 217, 212);
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  padding: 25px;
-  max-width: 600px;
-  margin: 60px auto;
+  padding: 30px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: auto;
 }
-.formulario-section h2 {
-  color: #794808;
+.formulario-general h2 {
+  color: black;
   text-align: center;
-  margin-bottom: 25px;
-}
-.formulario-section label {
   font-weight: 600;
+  margin-bottom: 20px;
+}
+.formulario-general label {
+  font-weight: bold;
   color: #2b2b2b;
-  margin-bottom: 8px;
-  display: block;
 }
-.formulario-section .form-control,
-.formulario-section .form-select {
-  border: 2px solid #d9d4ce;
+.formulario-general input, .formulario-general select, .formulario-general textarea {
+  border: 1px solid #794808;
   border-radius: 10px;
-  padding: 10px 12px;
-  font-size: 16px;
-  transition: all 0.3s ease;
+  padding: 10px;
+  font-family: "Poppins", Arial, sans-serif;
 }
-.formulario-section .form-control:focus,
-.formulario-section .form-select:focus {
-  border-color: #794808;
-  box-shadow: 0 0 6px rgba(121, 72, 8, 0.4);
-  outline: none;
-}
-.formulario-section .btn-enviar {
+.formulario-general button {
   background-color: #794808;
-  color: #f5f5f5;
+  color: #fff;
   border: none;
   border-radius: 10px;
-  padding: 10px 18px;
-  font-size: 17px;
-  font-weight: 600;
-  margin-top: 15px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
-.formulario-section .btn-enviar:hover {
-  background-color: #a86b2b;
-  transform: scale(1.03);
+.formulario-general button:hover {
+  background-color: rgb(73.1627906977, 43.5348837209, 4.8372093023);
 }
 
 /*  FOOTER */

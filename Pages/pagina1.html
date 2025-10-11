@@ -27,53 +27,53 @@
 
 <!-- fORMULARIO HECHO CON BOOTSTRAP Y ADAPTADO -->
 
+<main>
+  <section class="formulario container my-5">
+    
+    <form class="formulario-general">
+      <h2>Datos para tu Planificación</h2>
 
-    <main><section class="formulario container my-5">
-  <h2 class="mb-4">Datos para tu Planificación</h2>
-  <form>
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <label for="nombre" class="form-label">Nombre</label>
-        <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="nombre" class="form-label">Nombre</label>
+          <input type="text" class="form-control" id="nombre" placeholder="Tu nombre">
+        </div>
+        <div class="col-md-6">
+          <label for="edad" class="form-label">Edad</label>
+          <input type="text" class="form-control" id="edad" placeholder="Edad">
+        </div>
       </div>
-      <div class="col-md-6">
-        <label for="edad" class="form-label">Edad</label>
-        <input type="number" class="form-control" id="edad" placeholder="Edad">
+
+      <div class="row mb-3">
+        <div class="col-md-6">
+          <label for="peso" class="form-label">Peso (kg)</label>
+          <input type="text" class="form-control" id="peso" placeholder="Peso">
+        </div>
+        <div class="col-md-6">
+          <label for="altura" class="form-label">Estatura (cm)</label>
+          <input type="text" class="form-control" id="altura" placeholder="Estatura">
+        </div>
       </div>
-    </div>
 
-    <div class="row mb-3">
-      <div class="col-md-6">
-        <label for="peso" class="form-label">Peso (kg)</label>
-        <input type="number" class="form-control" id="peso" placeholder="Peso">
+      <div class="mb-3">
+        <label for="patologias" class="form-label">Patologías / Lesiones</label>
+        <textarea class="form-control" id="patologias" rows="3" placeholder="Describe si tienes alguna condición"></textarea>
       </div>
-      <div class="col-md-6">
-        <label for="estatura" class="form-label">Estatura (cm)</label>
-        <input type="number" class="form-control" id="estatura" placeholder="Estatura">
+
+      <div class="mb-3">
+        <label for="objetivo" class="form-label">Objetivo</label>
+        <select id="objetivo" class="form-select">
+          <option selected>Selecciona tu objetivo</option>
+          <option>Definición</option>
+          <option>Hipertrofia</option>
+          <option>Fuerza</option>
+        </select>
       </div>
-    </div>
 
-    <div class="mb-3">
-      <label for="patologias" class="form-label">Patologías / Lesiones</label>
-      <textarea class="form-control" id="patologias" rows="3" placeholder="Describe si tienes alguna condición"></textarea>
-    </div>
-
-    <div class="mb-3">
-      <label for="objetivo" class="form-label">Objetivo</label>
-      <select class="form-select" id="objetivo">
-        <option selected>Selecciona tu objetivo</option>
-        <option value="1">Ganar masa muscular</option>
-        <option value="2">Perder grasa</option>
-        <option value="3">Tonificar</option>
-        <option value="4">Mejorar resistencia</option>
-      </select>
-    </div>
-
-    <button type="submit" class="btn btn-primary">Enviar</button>
-  </form>
-</section>
-
-    </main>
+      <button type="submit" class="btn">Enviar</button>
+    </form>
+  </section>
+</main>
 
 
     <footer>
