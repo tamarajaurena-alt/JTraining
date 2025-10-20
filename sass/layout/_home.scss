@@ -31,7 +31,7 @@ body {
   }
 
   h1 {
-    color: $color-blanco;
+    color: $color-beige;
     font-size: 28px;
     letter-spacing: 1px;
   }
@@ -43,7 +43,7 @@ body {
   list-style: none;
   
   li a {
-    color: $color-blanco;
+    color: $color-beige;
     text-decoration: none;
     font-weight: 600;
     font-size: 17px;
@@ -98,13 +98,18 @@ main {
   @include flex-center(space-between, flex-start, 30px);
   flex-wrap: wrap;
   margin: 40px;
+  align-items: flex-start;
 
   .rutinas {
-   background-color: rgb(171, 127, 83);  
+   background-color: rgb(250, 247, 244);  
     flex: 1;
-    min-width: 350px;
-    max-width: 600px;
+    width: 350px;
+    height: 450px;
+    aspect-ratio: 16 / 9;
+    box-sizing: border-box;
     border-radius: 8px;
+    padding: 25px;
+    overflow-y: auto;
 
     h2, h3 {
       color:black;
@@ -128,10 +133,7 @@ main {
   }
 }
 
-}/* ================================
-   RECETARIO ORIGINAL
-================================= */
-
+}
 .contenedor-receta-foto {
   display: flex;
   justify-content: space-between;
@@ -255,7 +257,7 @@ main {
 /*  FOOTER */
 footer {
   background-color: $color-principal;
-  color: $color-blanco;
+  color: white;
   text-align: center;
   padding: 25px;
   border-radius: 15px 15px 0 0;
@@ -272,7 +274,7 @@ footer {
   @include flex-center(center, center, 20px);
 
   a {
-    color: $color-blanco;
+    color: white;
     font-size: 22px;
     transition: transform 0.3s ease, color 0.3s ease;
 
@@ -315,7 +317,7 @@ footer {
       list-style: disc;
       padding-left: 25px;
       color: #333;
-      font-size: 16px;
+      font-size: 21px;
 
       li {
         margin-bottom: 8px;

@@ -6,7 +6,8 @@
   box-sizing: border-box;
 }
 
-
+/*  VARIABLES GENERALES */
+/*  MIXINS  */
 /* ESTILO GENERAL */
 body {
   background: radial-gradient(circle farthest-corner at 10% 20%, rgb(58, 35, 12) 0%, rgb(215, 119, 13) 90%);
@@ -42,7 +43,7 @@ body {
   border-radius: 8px;
 }
 .header-izq h1 {
-  color: #f5f5f5;
+  color: #d3b281;
   font-size: 28px;
   letter-spacing: 1px;
 }
@@ -56,7 +57,7 @@ body {
   list-style: none;
 }
 .navbar ul li a {
-  color: #f5f5f5;
+  color: #d3b281;
   text-decoration: none;
   font-weight: 600;
   font-size: 17px;
@@ -107,13 +108,18 @@ main video {
   gap: 30px;
   flex-wrap: wrap;
   margin: 40px;
+  align-items: flex-start;
 }
 .contenedor-rutinas-video .rutinas {
-  background-color: rgb(171, 127, 83);
+  background-color: rgb(250, 247, 244);
   flex: 1;
-  min-width: 350px;
-  max-width: 600px;
+  width: 350px;
+  height: 450px;
+  aspect-ratio: 16/9;
+  box-sizing: border-box;
   border-radius: 8px;
+  padding: 25px;
+  overflow-y: auto;
 }
 .contenedor-rutinas-video .rutinas h2, .contenedor-rutinas-video .rutinas h3 {
   color: black;
@@ -137,9 +143,6 @@ main video {
   object-fit: cover;
 }
 
-/* ================================
-   RECETARIO ORIGINAL
-================================= */
 .contenedor-receta-foto {
   display: flex;
   justify-content: space-between;
@@ -255,7 +258,7 @@ main video {
 /*  FOOTER */
 footer {
   background-color: #794808;
-  color: #f5f5f5;
+  color: white;
   text-align: center;
   padding: 25px;
   border-radius: 15px 15px 0 0;
@@ -274,7 +277,7 @@ footer p {
   gap: 20px;
 }
 .social-btns a {
-  color: #f5f5f5;
+  color: white;
   font-size: 22px;
   transition: transform 0.3s ease, color 0.3s ease;
 }
@@ -318,7 +321,7 @@ footer p {
   list-style: disc;
   padding-left: 25px;
   color: #333;
-  font-size: 16px;
+  font-size: 21px;
 }
 .inicio .texto-box ul li {
   margin-bottom: 8px;
