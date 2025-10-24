@@ -143,74 +143,54 @@ main video {
   object-fit: cover;
 }
 
+:root {
+  --alto-receta: 480px;
+}
+
 .contenedor-receta-foto {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
-  flex-wrap: wrap;
+  align-items: stretch;
   gap: 30px;
   margin: 40px;
+  flex-wrap: wrap;
 }
 
-/* Caja de la receta */
 .contenedor-receta-foto .recetas {
-  background-color: white;
+  background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
   padding: 25px;
+  box-sizing: border-box;
   flex: 1;
   min-width: 350px;
   max-width: 600px;
+  height: var(--alto-receta);
+  overflow: auto;
 }
 
-/* Títulos */
-.contenedor-receta-foto .recetas h2 {
-  color: #794808;
-  text-align: center;
-  margin-bottom: 15px;
-}
-
-.contenedor-receta-foto .recetas h3,
-.contenedor-receta-foto .recetas h4 {
-  color: #794808;
-  text-align: center;
-  margin-bottom: 10px;
-}
-
-/* Listas */
-.contenedor-receta-foto .recetas ul {
-  list-style: disc;
-  margin-left: 20px;
-  font-size: 17px;
-  line-height: 1.6;
-  color: #333;
-}
-
-/* Caja de imagen */
-.foto-receta {
+.contenedor-receta-foto .foto-receta {
   flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  min-width: 350px;
+  max-width: 600px;
+  height: var(--alto-receta);
 }
 
-.foto-receta img {
+.contenedor-receta-foto .foto-receta img {
+  display: block;
   width: 100%;
-  max-width: 400px;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  height: 100%;
   object-fit: cover;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* Responsivo */
 @media (max-width: 900px) {
+  :root {
+    --alto-receta: 360px;
+  }
   .contenedor-receta-foto {
     flex-direction: column;
-    align-items: center;
-  }
-  .foto-receta img {
-    max-width: 300px;
-    margin-top: 20px;
   }
 }
 /* FORMULARIO CON BOOTSTRAP PERSONALIZADO */
