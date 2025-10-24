@@ -18,24 +18,24 @@ body {
   line-height: 1.6;
 }
 
-/*  HEADER */
+/* HEADER + NAV + CTA BUTTONS */
+/* ===== Desktop (≥1024px) ===== */
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 0;
-  padding: 20px 40px;
+  justify-content: space-between;
+  padding: 20px 60px;
   background-color: #794808;
   border-radius: 15px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .header-izq {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 15px;
+  gap: 25px;
+  text-decoration: none;
 }
 .header-izq img {
   width: 80px;
@@ -43,19 +43,21 @@ body {
   border-radius: 8px;
 }
 .header-izq h1 {
-  color: #d3b281;
+  color: #f5f5f5;
   font-size: 28px;
   letter-spacing: 1px;
 }
 
-/*  NAVBAR */
+/* NAVBAR */
 .navbar ul {
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 55px;
   list-style: none;
+  margin: 0 0 0 40px;
+  padding: 0;
 }
+
 .navbar ul li a {
   color: #d3b281;
   text-decoration: none;
@@ -63,10 +65,116 @@ body {
   font-size: 17px;
   transition: color 0.3s ease;
 }
-.navbar ul li a:hover, .navbar ul li a.active {
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
   color: #ffcc00;
 }
 
+/* BOTONES DERECHA (Suscribirse / Iniciar sesión) */
+.botones-header {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.botones-header button {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+  line-height: 1;
+  white-space: nowrap;
+}
+.botones-header .btn-suscribirse {
+  background-color: #b87b35;
+  color: #fff;
+}
+.botones-header .btn-suscribirse:hover {
+  background-color: #d4a24c;
+  transform: scale(1.05);
+}
+.botones-header .btn-login {
+  background-color: transparent;
+  color: #f5f5f5;
+  border: 2px solid #f5f5f5;
+}
+.botones-header .btn-login:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: scale(1.05);
+}
+
+/* ===== Tablet (600px–1023px) ===== */
+@media (max-width: 1023px) {
+  .header {
+    padding: 16px 32px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+  .header-izq {
+    gap: 18px;
+  }
+  .header-izq img {
+    width: 70px;
+  }
+  .header-izq h1 {
+    font-size: 24px;
+  }
+  .navbar ul {
+    gap: 36px;
+    margin-left: 24px;
+  }
+  .botones-header {
+    gap: 10px;
+  }
+  .botones-header button {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+/* ===== Mobile (<600px) ===== */
+@media (max-width: 599px) {
+  .header {
+    padding: 14px 16px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+  .header-izq {
+    justify-content: center;
+    gap: 12px;
+  }
+  .header-izq img {
+    width: 60px;
+  }
+  .header-izq h1 {
+    font-size: 20px;
+  }
+  .navbar ul {
+    justify-content: center;
+    gap: 18px;
+    margin-left: 0;
+    flex-wrap: wrap;
+  }
+  .botones-header {
+    justify-content: center;
+    margin-left: 0;
+    gap: 8px;
+  }
+  .botones-header button {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .botones-header button {
+    transition: none;
+  }
+}
 /*  CONTENIDO PRINCIPAL */
 main {
   max-width: 1100px;
@@ -357,4 +465,4 @@ footer p {
   }
 }
 
-/*# sourceMappingURL=Styles.css.map */
+/*# sourceMappingURL=style.css.map */
